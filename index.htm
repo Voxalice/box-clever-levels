@@ -1,47 +1,30 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>Box Clever Custom Levels Helper</title>
-        <noscript><div>This page requires JavaScript!</div></noscript>
-
         <style>
             html {
                 background: #222;
                 color: #eee;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
-
             input {
                 font-size: 110%;
                 width: 375px;
                 padding: 7px;
             }
-
-            button{padding:5px;font-size:110%}
-
-            noscript div {
-                color: #fed;
-                background: #c00;
-                text-align: center;
-                padding: 10px;
-                font-size: 200%;
-                font-family: 'Courier New', Courier, monospace;
-            }
+            button{padding:5px;font-size:110%}a{color:#78f;}
         </style>
     </head>
 
     <body>
         <center>
             <h1>Box Clever Custom Levels Helper</h1>
-            <div id="flashy">
-                <p>Unfortunately, you need a browser with<br>Flash Player 8+ to access this content.
-            </div>
+            <div id="flashy">Unfortunately, you need a browser with<br>Flash Player 8+ and JavaScript to access this content.</div>
             <br><br><input type="text" placeholder="Level URL" id="url"> <button onclick="loadLevel();">Load</button> <button onclick="document.querySelector('#url').value='';">Clear</button>
-            <p style="color:grey;font-size:80%">Custom Levels Helper: Version 1<br>Made with <img src="box clever guy.png" height="15" /> by Voxalice<br>DON'T REMOVE ANY PART OF THE URL.</p>
+            <p style="color:grey;font-size:80%">Custom Levels Helper: Version 1<br>Made with <img src="box clever guy.png" height="15" /> by Voxalice<br>DON'T REMOVE ANY PART OF THE URL.<br><br><a href="https://github.com/Voxalice/box-clever-levels/blob/main/box%20clever%20levels.txt">Example levels</a></p>
         </center>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/swfobject/2.2/swfobject.min.js"></script>
+        <script src="swfobject.js"></script>
         <script>
             function start(title="BCCLH-Sample",code="5_1m_pp_6o6p6q_1o2o3o5o7o9oaobodoeofohoiojolono1p5p7p9pephpjplpmpnp1q5q7qeqhqjqlqnq1r2r3r5r6r7r9rarbrerhrirjrlrnr__bq_mo_9qaq_____") {
                 var flashvars = {
@@ -62,15 +45,11 @@
             }
 
             function loadLevel(){
-                var iContent = document.querySelector("#url").value;
-                start(iContent.split("/")[5], iContent.split("/")[6]);
+                var iURL = document.querySelector("#url").value.split("/");
+                start(iURL[5], iURL[6]);
             }
 
             start();
         </script>
     </body>
 </html>
-
-<!--
-tghtitle=BCCLH-Sample&tghcode=5_1m_pp_6o6p6q_1o2o3o5o7o9oaobodoeofohoiojolono1p5p7p9pephpjplpmpnp1q5q7qeqhqjqlqnq1r2r3r5r6r7r9rarbrerhrirjrlrnr__bq_mo_9qaq_____
--->
